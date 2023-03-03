@@ -1,0 +1,40 @@
+<%- include('include/_header')%>
+
+    <nav>
+        <ul>
+            <li><a class="tab-links" onclick="window.history.back()">Home <br></a></li>
+        </ul>
+    </nav>
+
+    <main class="site-main">
+        <div class="productContainer">
+            <div class="product-view">
+                <div class="product-imgs">
+                    <div class="product">
+                        <img src="/public/productImages/<%=product.productImage%>" alt="<%=product.productImage%>">
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h1><%=product.productName%></h1>
+                    <h2>Starting Bid : <%=product.startPrice%></h2>
+                    <hr>
+                    <table cellspacing="20">
+                        <tr>
+                            <td class="heading">Description</td>
+                            <td class="description"><%=product.productDescription%></td>
+                        </tr>
+                        <tr>
+                            <td class="heading">Starting Bid</td>
+                            <td class="description"><%=product.startPrice%></td>
+                        </tr>
+                        <tr>
+                            <td class="heading">Seller</td>
+                            <td class="description"><%=product.userId.name.firstName%> <%=product.userId.name.lastName%></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <%- include('include/_footer')%>

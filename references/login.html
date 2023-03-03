@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>E-Auction</title>
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo">
+            <h1><span>E</span>-Auction</h1>
+            <p>A complete solution for managing online auctions, selling products and bids.</p>
+        </div>
+        <!-- <div class="reglog">
+            <button><a href="register.html">Register</a></button>
+            <button><a href="Login.html">Log-In</a></button>
+        </div> -->
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home <br></a></li>
+            <!-- <li><a class="tab-links" onclick="opentab('about')">About Us <br></a></li>
+            <li><a class="tab-links" onclick="opentab('contact')">Contact Us <br></a></li>
+            <li><a class="tab-links" onclick="opentab('howitworks')">How it works <br></a></li> -->
+        </ul>
+    </nav>
+    <div class="regContainer">
+        <div class="registerOption">
+            <form class="tab">                
+                <a><p class="login-links" onclick="openLogin('bidderLogin')">Login as Bidder</p></a>
+                <a><p class="login-links" onclick="openLogin('sellerLogin')">Login as Seller</p></a>
+            </form>
+            
+            <div class="login-contents" id="bidderLogin">
+                <div class="form">
+                    <form>
+                        <div class="loginDetails">
+                            <h3>Bidder Login<br></h3>
+                            <label for="username">Username
+                                <input type="email" name="username">
+                            </label>
+                            <label for="password">Password
+                                <input type="password" name="password">
+                            </label>
+                        </div>
+                        <button>Login</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="login-contents" id="sellerLogin">
+                <div class="form">
+                    <form>
+                        <div class="loginDetails">
+                            <h3>Seller Login<br></h3>
+                            <label for="username">Username
+                                <input type="email" name="username">
+                            </label>
+                            <label for="password">Password
+                                <input type="password" name="password">
+                            </label>
+                        </div>
+                        <button>Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var loginlinks = document.getElementsByClassName('login-links');
+        var logincontents = document.getElementsByClassName('login-contents');
+
+        function openLogin(link) {
+            for(loginlink of loginlinks){
+                loginlink.classList.remove('active-login-link');
+            }
+
+            for(logincontent of logincontents) {
+                logincontent.classList.remove('active-login-form');
+            }
+
+            event.currentTarget.classList.add('active-login-link');
+            document.getElementById(link).classList.add('active-login-form');
+        }
+    </script>
+</body>

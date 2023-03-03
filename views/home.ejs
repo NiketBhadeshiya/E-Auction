@@ -1,0 +1,131 @@
+<%- include('include/_header') %>
+    <%- include('include/_nav') %>
+        <main class="site-main">
+            <div class="login-container">
+
+                <div class="tab-contents" id="myProfile">
+                    <div class="table">
+
+                        <table cellspacing="20">
+                            <h1>
+                                <%=user[0].name.firstName%> your details are :
+                            </h1>
+                            <tbody>
+                                <tr>
+                                    <td>First name</td>
+                                    <td>
+                                        <%=user[0].name.firstName%>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Last name</td>
+                                    <td>
+                                        <%=user[0].name.lastName%>
+                                    </td>
+                                </tr>
+    
+                                <tr>
+                                    <td>Registered mail id</td>
+                                    <td>
+                                        <%=user[0].userName%>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Contact no.</td>
+                                    <td>
+                                        <%=user[0].contactNo%>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Address</td>
+                                    <td>
+                                        <%=user[0].address.buildingNo%>, <%=user[0].address.buildingName%>,
+                                                <%=user[0].address.landmark%>, <%=user[0].address.city%>,
+                                                        <%=user[0].address.state%>, <%=user[0].address.pincode%>
+                                    </td>
+                                </tr>
+    
+                            </tbody>
+                        </table>
+                        <div class="update-profile">
+                            <button><a href="/update-profile/<%=user[0]._id%>" target="_blank"> Update Profile</a></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-contents active-tab" id="home">
+                    <div class="product-view">
+                        <div class="grid-view">
+                            <% product.forEach((p)=> { %>
+                                <a href="/productView?id=<%=p._id%>">
+                                    <% if(p.approvedByAdmin=='Yes' ){ %>
+                                        <div class="product">
+                                            <div class="product-image">
+                                                <img src="/public/productImages/<%=p.productImage%>"
+                                                    alt="<%=p.productImage%>">
+                                            </div>
+                                            <div class="product-description">
+                                                <p class="product-name">
+                                                    <%=p.productName%>
+                                                </p>
+                                                <p class="p-desc">
+                                                        <%=p.productDescription%>    
+                                                        <a href="/auction?productId=<%=p._id%>&userId=<%=user[0]._id%>" style="color:red">Go For Auction</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <% } %>
+
+                                </a>
+                                        <% }) %>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-contents" id="myProduct">
+                    <div class="user-product">
+                        <table class="user-product-table">
+                            <thead>
+                                <tr>
+                                    <td>Image</td>
+                                    <td>Product</td>
+                                    <td>Actions</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% myProduct.forEach((mp)=> { %>
+                                    <tr>
+                                        <td><img src="/public/productImages/<%=mp.productImage%>"
+                                                alt="<%=mp.productImage%>" style="width:400px"></td>
+                                        <td>
+                                            <p>
+                                                <%=mp.productName%>
+                                            </p>
+                                            <p>
+                                                <%=mp.productDescription%>
+                                            </p>
+                                            <p>Reviewed : <%=mp.isReviewed%>
+                                            </p>
+                                            <p>Approved : <%=mp.approvedByAdmin%>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <a href="/user-product-update?id=<%=mp._id%>" style="cursor: pointer;"
+                                                data-id="<%=mp._id%>" class="update-user-product">update</a>
+                                            <a style="cursor: pointer;" data-id="<%=mp._id%>"
+                                                class="delete-user-product" style="color:red">delete</a>
+                                            <% if(mp.approvedByAdmin == 'Yes'){ %>
+                                                <a href="/auction?productId=<%=mp._id%>&userId=<%=user[0]._id%>">Go For Auction</a>
+                                            <% } %>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <%- include('include/_footer')%>

@@ -1,0 +1,72 @@
+<%- include('include/_header')%>
+
+    <div class="tab-contents active-tab" id="placeProduct">
+        <div class="item-register-form">
+            <form action="/api/placeProducts/<%=user._id%>" method="POST" enctype="multipart/form-data" id="productRegister"
+                style="width:90%">
+                <fieldset>
+
+                    <legend>User Information</legend>
+                    <div class="form-group">
+                        <label for="name"> Your Name
+                            <input type="hidden" name="id" value="<%=user._id%>">
+                            <input type="text" name="firstName" value="<%=user.name.firstName%>" disabled>
+                            <input type="text" name="lastName" value="<%=user.name.lastName%>" disabled>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="userName"> Mail id
+                            <input type="text" name="userName" value="<%=user.userName%>" disabled>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactNo"> Contact Number
+                            <input type="text" name="contactNo" value="<%=user.contactNo%>" disabled>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="address"> Address
+                            <input type="text" name="buildingNo" value="<%=user.address.buildingNo%>" disabled>
+                            <input type="text" name="buildingName" value="<%=user.address.buildingName%>" disabled>
+                            <input type="text" name="landmark" value="<%=user.address.landmark%>" disabled>
+                            <input type="text" name="city" value="<%=user.address.city%>" disabled>
+                            <input type="text" name="state" value="<%=user.address.state%>" disabled>
+                            <input type="text" name="pinCode" value="<%=user.address.pincode%>" disabled>
+                        </label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>
+                        Product Information
+                    </legend>
+                    <div class="form-group">
+                        <label for="productName">Name of Offering
+                            <input type="text" name="productName" placeholder="Your Product Name">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="startMoney">Starting Price
+                            <input type="text" name="startPrice" placeholder="Enter Starting Bid Amount">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="productImage">Upload Product Image
+                            <input type="file" name="productImage">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="productDescription">Upload Product Image
+                            <textarea name="productDescription" cols="50" rows="10"
+                                placeholder="Detailed Description about your Product"></textarea>
+                        </label>
+                    </div>
+
+                </fieldset>
+                <div class="productSubmit">
+                    <input type="submit" value="Submit">
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <%- include('include/_footer')%>

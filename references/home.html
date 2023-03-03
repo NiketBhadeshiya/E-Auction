@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>E-Auction</title>
+</head>
+
+<body>
+    <div class="eauction-site">
+
+        <header id="header">
+            <div class="logo">
+                <h1><span>E</span>-Auction</h1>
+                <p>A complete solution for managing online auctions, selling products and bids.</p>
+            </div>
+        </header>
+
+        <main class="site-main">
+            <div class="tab-content active-tab" id="placeProduct">
+                <div class="item-register-form">
+                    <form method="post" id="productRegister">
+                        <h3>Fill the product registration form... </h3>
+                        <div class="form-group">
+                            <label for="name"> Your Name
+                                <input type="text" name="firstName" placeholder="First Name">
+                                <input type="text" name="lastName" placeholder="Last Name">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="userName"> Mail id
+                                <input type="text" name="userName" placeholder="Your Registered Mail">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactNo"> Contact Number
+                                <input type="text" name="contactNo">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="address"> Address
+                                <input type="text" name="buildingNo" placeholder="Building No.">
+                                <input type="text" name="buildingName" placeholder="Building Name">
+                                <input type="text" name="landmark" placeholder="Landmark">
+                                <input type="text" name="city" placeholder="City">
+                                <input type="text" name="state" placeholder="State">
+                                <input type="text" name="pinCode" placeholder="Pincode">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="productName">Name of Offering
+                                <input type="text" name="productName" placeholder="Your Product Name">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="startMoney">Starting Price
+                                <input type="text" name="startMoney" placeholder="Enter Starting Bid Amount">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="productImage">Upload Product Image
+                                <input type="file" name="productImage">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="productDescription">Upload Product Image
+                                <textarea name="productDescription" cols="50" rows="10"
+                                    placeholder="Detailed Description about your Product"></textarea>
+                            </label>
+                        </div>
+
+                        <div class="productSubmit">
+                            <input type="button" value="Submit">
+                            <button type="reset">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

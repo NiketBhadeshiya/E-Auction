@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>E-Auction</title>
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo">
+            <h1><span>E</span>-Auction</h1>
+            <p>A complete solution for managing online auctions, selling products and bids.</p>
+        </div>
+        <!-- <div class="reglog">
+            <button><a href="register.html">Register</a></button>
+            <button><a href="Login.html">Log-In</a></button>
+        </div> -->
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home <br></a></li>
+            <!-- <li><a class="tab-links" onclick="opentab('about')">About Us <br></a></li>
+            <li><a class="tab-links" onclick="opentab('contact')">Contact Us <br></a></li>
+            <li><a class="tab-links" onclick="opentab('howitworks')">How it works <br></a></li> -->
+        </ul>
+    </nav>
+    <div class="regContainer">
+        <div class="registerOption">
+            <!-- <form class="tab">                
+                <a><p class="register-links" onclick="openform('bidderForm')">Register as Bidder</p></a>
+                <a><p class="register-links" onclick="openform('sellerForm')">Register as Seller</p></a>
+            </form> -->
+            
+            <div class="form-contents" id="bidderForm">
+                <div class="form">
+                    <form>
+                        <div class="loginDetails">
+                            <h3>Sign Up <br></h3>
+                            <label for="username">Enter Email
+                                <input type="email" name="username">
+                            </label>
+                            <label for="password">Enter Password
+                                <input type="password" name="password">
+                            </label>    
+                            <label for="confirmPassword">Confirm Password
+                                <input type="password" name="confirmPassword">
+                            </label>
+                        </div>
+                        <!-- <div class="sellerDetails">
+                            <h3>Bidder Details <br></h3>
+                            <label for="name">Enter Name
+                                <input type="text" name="firstName" style="width:200px" placeholder="First name">
+                                <input type="text" name="lastName" style="width:200px" placeholder="Last name">
+                            </label>
+                            <label for="number">Enter Contact number
+                                <input type="text" name="number">
+                            </label>
+                            <label for="address" >Address Details</label>
+                                <input type="text" id="address" name="buildingNo" placeholder="Building-No.">
+                                <input type="text" id="address" name="buildingName" placeholder="Building-Name">
+                                <input type="text" id="address" name="landmark" placeholder="Landmark">
+                                <input type="text" id="address" name="city" placeholder="City">
+                                <input type="text" id="address" name="state" placeholder="State">
+                                <input type="number(6)" id="address" name="pcode" placeholder="Pincode">
+                        </div> -->
+                        <button>Register</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- <div class="form-contents" id="sellerForm">
+                <div class="form">
+                    <form>
+                        <div class="loginDetails">
+                            <h3>Seller Login Details <br></h3>
+                            <label for="username">Enter Email
+                                <input type="email" name="username">
+                            </label>
+                            <label for="password">Enter Password
+                                <input type="password" name="password">
+                            </label>
+                            <label for="confirmPassword">Confirm Password
+                                <input type="password" name="confirmPassword">
+                            </label>
+                        </div>
+                        <div class="sellerDetails">
+                            <h3>Seller Details <br></h3>
+                            <label for="name">Enter Name
+                                <input type="text" name="firstName" style="width:200px" placeholder="First name">
+                                <input type="text" name="lastName" style="width:200px" placeholder="Last name">
+                            </label>
+                            <label for="number">Enter Contact number
+                                <input type="text" name="number">
+                            </label>
+                            <label for="address" >Address Details</label>
+                                <input type="text" id="address" name="buildingNo" placeholder="Building-No.">
+                                <input type="text" id="address" name="buildingName" placeholder="Building-Name">
+                                <input type="text" id="address" name="landmark" placeholder="Landmark">
+                                <input type="text" id="address" name="city" placeholder="City">
+                                <input type="text" id="address" name="state" placeholder="State">
+                                <input type="number(6)" id="address" name="pcode" placeholder="Pincode">
+                        </div>
+                        <button>Register</button>
+                    </form>
+                </div> 
+            </div> -->
+        </div>
+    </div>
+
+
+    <script>
+        var registerlinks = document.getElementsByClassName('register-links');
+        var formcontents = document.getElementsByClassName('form-contents');
+
+        function openform(formname) {
+
+            for(registerlink of registerlinks){
+                registerlink.classList.remove("active-regi-link");
+            }
+
+            for(formcontent of formcontents){
+                formcontent.classList.remove("active-form");
+            }
+
+            event.currentTarget.classList.add("active-regi-link");
+            document.getElementById(formname).classList.add("active-form");
+        }
+    </script>
+</body>

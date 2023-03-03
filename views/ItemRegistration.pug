@@ -1,0 +1,36 @@
+extends base.pug 
+
+block style 
+    style 
+        include ../static/ItemRegistration.css
+
+block content 
+
+    form(action="/itemRegister" method="post")
+        h2 Fill the Product Regitration Form... #[br] 
+        label(for="Name") Your Name : 
+            input(type="text" name="fname" id="fname" placeholder="First name")
+            input(type="text" name="lname" id="lname" placeholder="Last name")  
+        label(for="mail") E-Mail : 
+            input(type="email" name="mail" id="mail" placeholder="ex : myName@example.com")
+        label(for="phno") Phone Number :
+            input(type="number" name="phno" id="phno")
+        label(for="address") Address : 
+            input(type="text" name="buildingNo" id="address" placeholder="Building-No.")
+            input(type="text" name="buildingName" id="address" placeholder="Building Name")
+            input(type="text" name="landmark" id="adddress" placeholder="Landmark")
+            input(type="text" name="city" id="address" placeholder="City")
+            input(type="text" name="state" id="address" placeholder="State")
+            input(type="number" name="pcode" id="address" placeholder="Pincode")
+        h3 Description of Product.. 
+        label(for="itemName") Name of Offering : 
+            input(type="text" name="itemName" id="item" placeholder="Product Name")
+        label(for="itemMoney") Starting Price :
+            input(type="number" name="itemMoney" id="item" placeholder="Strating bid")
+        label(for="itemImage") Upload Item Photos :
+            input(type="file" name="itemImage" id="item")
+        label(for="itemDescription") 
+            textarea(name="itemDescription" cols="50" rows="10" placeholder="Detailed Description about your item") 
+
+        button.itemSubmit 
+            | Submit    

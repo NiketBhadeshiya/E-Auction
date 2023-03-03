@@ -1,0 +1,41 @@
+<%- include('include/_header')%>
+
+    <div class="tab-contents active-tab" id="placeProduct">
+        <div class="item-register-form">
+            <form method="post" enctype="multipart/form-data" id="productUpdate" style="width:90%">
+                <fieldset>
+                    <legend>
+                        Product Information
+                    </legend>
+                    <div class="form-group">
+                        <img src="/public/productImages/<%=product.productImage%>" alt="<%=product.productImage%>" style="width:400px">
+                            <!-- <label for="productImage">change Image
+                                <input type="file" name="productImage">
+                            </label> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="productName">Name of Offering
+                            <input type="hidden" name="id" value="<%=product._id%>">
+                            <input type="text" name="productName" placeholder="Your Product Name" value="<%=product.productName%>">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="startMoney">Starting Price
+                            <input type="text" name="startPrice" placeholder="Enter Starting Bid Amount" value="<%=product.startPrice%>">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="productDescription">Upload Description
+                            <input type="text" name="productDescription" value="<%=product.productDescription%>" style="height:100px;width:500px">
+                        </label>
+                    </div>
+
+                </fieldset>
+                <div class="productSubmit">
+                    <input type="submit" value="Save Changes">
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <%- include('include/_footer')%>

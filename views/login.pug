@@ -1,0 +1,22 @@
+extends base.pug 
+
+block style 
+    style
+        include ../static/login.css
+
+block list 
+    li(class="rightSide") #[a(href="/")  Home]  
+
+block content 
+
+    form(action="/login" method="post")
+        div.tab 
+            div.logDiv
+                a(href="/login") #[h3.log Log In]
+            div.signDiv
+                a(href="/signup")  #[h3.sign Register]
+        h2.subtitle Welcome ! Just Do Log-in
+        input(type="text" name="uname" placeholder="Username" required)
+        input(type="password" name="pass" placeholder="Password" required)
+        button.btn 
+            | Login 

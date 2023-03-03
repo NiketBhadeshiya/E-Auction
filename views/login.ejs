@@ -1,0 +1,51 @@
+<%- include('./include/_header') %>
+    <!-- <%- include('./include/_nav') %> -->
+
+
+        <div class="regContainer">
+            <div class="registerOption">
+                <!-- <form class="tab">                
+            <a><p class="login-links" onclick="openLogin('bidderLogin')">Login as Bidder</p></a>
+            <a><p class="login-links" onclick="openLogin('sellerLogin')">Login as Seller</p></a>
+        </form> -->
+
+                <div class="login-contents" id="bidderLogin">
+                    <div class="form">
+                        <form method="post" id="login-submit">
+                            <div class="loginDetails">
+                                <h3>Login<br></h3>
+                                <label for="userName">Username
+                                    <input type="email" name="userName">
+                                </label>
+                                <label for="password">Password
+                                    <input type="password" name="password">
+                                </label>
+                            </div>
+                            <button type="submit" class="login-submit">Login</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="new-user">
+                    <a href="/signUp">New User ? create account</a>
+                </div>
+
+                <!-- <div class="login-contents" id="sellerLogin">
+            <div class="form">
+                <form>
+                    <div class="loginDetails">
+                        <h3>Seller Login<br></h3>
+                        <label for="username">Username
+                            <input type="email" name="username">
+                        </label>
+                        <label for="password">Password
+                            <input type="password" name="password">
+                        </label>
+                    </div>
+                    <button>Login</button>
+                </form>
+            </div>
+        </div> -->
+            </div>
+        </div>
+
+        <%- include('./include/_footer') %>

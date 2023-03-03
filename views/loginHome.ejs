@@ -1,0 +1,145 @@
+<%- include('include/_header')%>
+    <%- include('include/_nav')%>
+
+        <main class="admin-container">
+            <div class="tab-contents active-tab" id="home">
+                <div class="sub-container">
+                    <div class="subnav">
+                        <ul>
+                            <li><a class="subtab-links active-subtab-link" onclick="opensubtab('users')">users <br></a>
+                            </li>
+                            <li><a class="subtab-links" onclick="opensubtab('requestedProduct')">requested product
+                                    <br></a></li>
+                            <li><a class="subtab-links">auction <br></a></li>
+                            <li><a class="subtab-links" onclick="opensubtab('allProduct')">All Products <br></a></li>
+                        </ul>
+                    </div>
+                    <div class="subtab-contents active-subtab" id="users">
+                        <table class="admin-all-users" cellspacing="15">
+                            <thead>
+                                <tr>
+                                    <td><h2>Username</h2></td>
+                                    <td><h2>Name</h2></td>
+                                    <td><h2>Contant No.</h2></td>
+                                    <td><h2>Action</h2></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% userdata.forEach((u)=> { %>
+                                    <tr>
+                                        <td>
+                                            <%=u.userName%>
+                                        </td>
+                                        <td>
+                                            <%=u.name.firstName%>
+                                                <%=u.name.lastName%>
+                                        </td>
+                                        <td>
+                                            <%=u.contactNo%>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <pre><a href="/update-profile/<%=u._id%>">Update</a>  <a style="cursor: pointer;" user-id="<%=u._id%>" class="admin-delete-user">delete</a></pre>
+                                            </p>    
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="subtab-contents" id="requestedProduct">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Image</td>
+                                    <td>Product name</td>
+                                    <td>Description</td>
+                                    <td>Action</td>
+                                </tr>
+                            </thead>
+                            <% requestProduct.forEach((p)=> { %>
+                                <tbody>
+                                    <tr>
+                                        <td><img src="/public/productImages/<%=p.productImage%>"
+                                                alt="<%=p.productImage%>" width="300px"></td>
+                                        <td>
+                                            <%=p.productName%>
+                                        </td>
+                                        <td>
+                                            <%=p.productDescription%> <br>isReviewed : <%=p.isReviewed%>
+                                        </td>
+                                        <td>
+                                            <p data-id="<%=p._id%>" id="approve-product" style="cursor: pointer;">
+                                                Approve</p>
+                                            <p data-id="<%=p._id%>" id="not-approve-product" style="cursor: pointer;">
+                                                Not Approve</p>
+                                        </td>
+                                        <td>
+                                            <a href="/productView?id=<%=p._id%>">View Details..</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <% }) %>
+                        </table>
+                    </div>
+                    <div class="subtab-contents" id="allProduct">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Image</td>
+                                    <td>Product name</td>
+                                    <td>Description</td>
+                                    <td>Action</td>
+                                </tr>
+                            </thead>
+                            <% product.forEach((p)=> { %>
+                                <tbody>
+                                    <tr>
+                                        <td><img src="/public/productImages/<%=p.productImage%>"
+                                                alt="<%=p.productImage%>" width="500px"></td>
+                                        <td>
+                                            <%=p.productName%>
+                                        </td>
+                                        <td>
+                                            <%=p.productDescription%>
+                                        </td>
+                                        <td>
+                                            <a href="/user-product-update?id=<%=p._id%>" style="cursor: pointer;"
+                                                data-id="<%=p._id%>" class="update-user-product">update</a>
+                                                <a style="cursor: pointer;" data-id="<%=p._id%>"
+                                                    class="delete-user-product">delete</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <% }) %>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" id="myProfile">
+                <table>
+                    <h1>
+                        <%=user[0].name.firstName%> your details are :
+                    </h1>
+                    <tbody>
+                        <tr>
+                            <td>First name</td>
+                            <td>
+                                <%=user[0].name.firstName%>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>User name</td>
+                            <td>
+                                <%=user[0].userName%>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button><a href="/admin/update-profile">Update</a></button>
+
+            </div>
+        </main>
+
+        <%- include('include/_adminFooter')%>
