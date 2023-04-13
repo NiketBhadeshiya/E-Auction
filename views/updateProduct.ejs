@@ -1,0 +1,96 @@
+<%- include('include/_header')%>
+
+    <div class="tab-contents active-tab" id="placeProduct">
+        <div class="item-register-form">
+            <form method="post" enctype="multipart/form-data" id="productUpdate" style="width:90%">
+                <fieldset>
+                    <legend>
+                        Product Information
+                    </legend>
+                    <div class="form-group">
+                        <img src="/public/productImages/<%=product.productImage%>" alt="<%=product.productImage%>" style="width:400px">
+                            <!-- <label for="productImage">change Image
+                                <input type="file" name="productImage">
+                            </label> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="productName">Name of Offering
+                            <input type="hidden" name="id" value="<%=product._id%>">
+                            <input type="text" name="productName"  value="<%=product.productName%>">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="startMoney">Starting Price
+                            <input type="text" name="startPrice"  value="<%=product.startPrice%>">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="odometer">KMs run/Odometer
+                            <input type="text" name="odometer" value="<%=product.odometer%>">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="engine">engine
+                            <input type="text" name="engine" value="<%=product.engine%>">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="noOfOwner">No. of Owner
+                            <input type="text" name="noOfOwner" value="<%=product.noOfOwner%>">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="colour">colour
+                            <input type="text" name="colour" placeholder="Enter colour of your product" value="<%=product.colour%>">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="registrationNo">Registration No
+                            <input type="text" name="registrationNo" placeholder="Enter registration no of your product" value="<%=product.registrationNo%>">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="damage">damage
+                            <input type="text" name="damage" value="<%=product.damage%>">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="accident">accident
+                            <input type="text" name="accident" placeholder="Enter Starting Bid Amount" value="<%=product.accident%>">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="model">model
+                            <input type="text" name="model" placeholder="Enter Starting Bid Amount" value="<%=product.model%>">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="manufacturer">manufacturer
+                            <input type="text" name="manufacturer" value="<%=product.manufacturer%>">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">year
+                            <input type="text" name="year" value="<%=product.year%>">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="month">month
+                            <input type="text" name="month" value="<%=product.month%>">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="fuel">fuel
+                            <input type="text" name="fuel" value="<%=product.fuel%>">
+                        </label>
+                    </div>
+                    
+                </fieldset>
+                <div class="productSubmit">
+                    <input type="submit" value="Save Changes">
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <%- include('include/_footer')%>

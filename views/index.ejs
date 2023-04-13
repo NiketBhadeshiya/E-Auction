@@ -1,0 +1,170 @@
+<%- include('include/_header') %>
+    <%- include('include/_nav') %>
+
+        <div class="container tab-contents active-tab" id="homeTab">
+            <div class="outer">
+                <div class="homeInfo">
+                    <h2>Hello There...</h1>
+                        <h1><span>W</span>elcome to <span>E</span>-Auction</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="container tab-contents" id="about">
+            <div class="outer">
+                <div class="aboutInfo">
+                    <h1>About US</h1>
+                    <p>An e-auction is an auction which is held over the internet. It holds online auctions of various
+                        products on a
+                        website and serves sellers and bidders accordingly. . It will help customer to buy and sell
+                        product in best
+                        price on the website from house. It will allow user to post their product for auction. Bidders
+                        can register
+                        and can bid for any available product.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container tab-contents" id="contact">
+            <div class="outer">
+                <div class="contactInfo">
+                    <form>
+                        <h1>Contact US</h1>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your E-mail" required>
+                        <textarea name="concern" id="contactus" cols="50" rows="10" placeholder="Enter Your Concern..."
+                            required></textarea>
+                        <div class="button">
+                            <button type="reset">Reset</button>
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="container tab-contents" id="howitworks">
+            <div class="outer">
+                <div class="howitworksInfo">
+                    <div class="forBidders">
+                        <div class="title">
+                            <h1>For Bidders</h1>
+                        </div>
+                        <div class="steps">
+                            <div class="furtherStep">
+                                <div class="number">1</div>
+                                <div class="sub-title">Register/Login</div>
+                            </div>
+                            <div class="furtherStep">
+                                <div class="number">2</div>
+                                <div class="sub-title">Find Product</div>
+                            </div>
+                            <div class="furtherStep">
+                                <div class="number">3</div>
+                                <div class="sub-title">Bid Product</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="forSellers">
+                        <div class="title">
+                            <h1>For Sellers</h1>
+                        </div>
+                        <div class="steps">
+                            <div class="furtherStep">
+                                <div class="number">1</div>
+                                <div class="sub-title">Register/Login</div>
+                            </div>
+                            <div class="furtherStep">
+                                <div class="number">2</div>
+                                <div class="sub-title">Place Product</div>
+                            </div>
+                            <div class="furtherStep">
+                                <div class="number">3</div>
+                                <div class="sub-title">Complete Bid</div>
+                            </div>
+                            <div class="furtherStep">
+                                <div class="number">4</div>
+                                <div class="sub-title">Result of Bid</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container tab-contents" id="signup">
+            <div class="regContainer">
+                <div class="registerOption">
+                    <div class="form-contents" id="bidderForm">
+                        <div class="form">
+                            <form id="register_form_submit" method="post">
+                                <div class="loginDetails">
+                                    <h3>Sign Up <br></h3>
+                                    <label for="userName">Enter Email
+                                        <input class="usermail" type="email" name="userName" placeholder="ex@gmail.com">
+                                    </label>
+                                    <label for="name">Enter Name
+                                        <input type="text" name="firstName" style="width:200px" placeholder="First name">
+                                        <input type="text" name="lastName" style="width:200px" placeholder="Last name">
+                                    </label>
+                                    <label for="password">Enter Password
+                                        <input class="userpassword" type="password" name="password">
+                                    </label>
+                                    <label for="confirmpassword">Confirm Password
+                                        <input type="password" name="confirmpassword">
+                                    </label>
+                                    <label for="contactNo">Enter Contact Number
+                                        <input class="usercontact" type="text" name="contactNo">
+                                    </label>
+                                    <!-- <label for="userName">Enter Address
+                                        <input class="useraddress" type="text" name="buildingNo" placeholder="buildingNo">
+                                        <input class="useraddress" type="text" name="buildingName" placeholder="buildingName">
+                                        <input class="useraddress" type="text" name="landmark" placeholder="landmark">
+                                        <input class="useraddress" type="text" name="city" placeholder="city">
+                                        <input class="useraddress" type="text" name="state" placeholder="state">
+                                        <input class="useraddress" type="text" name="pincode" placeholder="pincode">
+                                    </label> -->
+                                </div>
+                                <button type="submit" class="register-submit">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="new-user">
+                        <li><a class="tab-links" onclick="opentab('login')" style="color:black"> already sign up ? just login..<br></a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container tab-contents" id="login">
+            <div class="regContainer">
+                <div class="loginOption">
+                    <div class="login-contents" id="bidderLogin">
+                        <div class="form">
+                            <form method="post" id="login-submit">
+                                <div class="loginDetails">
+                                    <h3>Login<br></h3>
+                                    <% if(message != null) {%>
+                                    <div class="login-message-div">
+                                        <%=message%>
+                                    </div>
+                                    <% } %>
+                                    <label for="userName">Username
+                                        <input class="loginMail" type="email" name="userName">
+                                    </label>
+                                    <label for="password">Password
+                                        <input class="loginPassword" type="password" name="password">
+                                    </label>
+                                </div>
+                                <button type="submit">Login</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="new-user">
+                        <li><a class="tab-links" onclick="opentab('signup')" style="color:black"> New User ? create account<br></a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('include/_footer') %>

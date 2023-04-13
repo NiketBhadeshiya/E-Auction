@@ -1,0 +1,82 @@
+<%- include('include/_header')%>
+
+    <nav>
+        <ul>
+            <li><a class="tab-links" onclick="window.history.back()">Home <br></a></li>
+        </ul>
+    </nav>
+
+    <main class="site-main">
+        <div class="productContainer">
+            <div class="product-view">
+                <div class="product-imgs">
+                    <% imgs.forEach((e) => { %>
+                        <div class="product">
+                            <!-- <img src="/public/productImages/<%=product.productImage%>" alt="<%=product.productImage%>"> -->
+                            <img src="<%=e.path%>" alt="<%=product.productImage%>">
+                        </div>
+                    <% }) %>
+                </div>
+                <div class="product-details">
+                    <h1><%=product.productName%></h1>
+                    <h2>Starting Bid : <%=product.startPrice%></h2>
+                    <hr>
+                    <table cellspacing="20">
+                        <tr>
+                            <td class="heading">Description</td>
+                        </tr>
+                        <tr>
+                            <td class="heading">Starting Bid</td>
+                            <td class="description"><%=product.startPrice%></td>
+                        </tr>
+                        <tr>
+                            <td class="heading">Seller</td>
+                            <td class="description"><%=product.userId.name.firstName%> <%=product.userId.name.lastName%></td>
+                        </tr>
+                        <tr>
+                            <td class="heading">Model</td>
+                            <td class="description"><%=product.model%></td>
+                        </tr>
+                        <tr>
+                            <td class="heading">Manufacturer</td>
+                            <td class="description"><%=product.manufacturer%></td>
+                        </tr>
+                        <tr>
+                            <td class="heading">Engine</td>
+                            <td class="description"><%=product.engine%></td>
+                        </tr>
+                        <tr>
+                            <td class="heading">No. of Owner</td>
+                            <td class="description"><%=product.noOfOwner%></td>
+                        </tr>
+                        <tr>
+                            <td class="heading">Odometer/Kms run</td>
+                            <td class="description"><%=product.odometer%></td>
+                        </tr>
+                        <tr>
+                            <td class="heading">Colour</td>
+                            <td class="description"><%=product.colour%></td>
+                        </tr>
+                        <tr>
+                            <td class="heading">Registration No</td>
+                            <td class="description"><%=product.registrationNo%></td>
+                        </tr>
+                        <tr>
+                            <td class="heading">Fuel</td>
+                            <td class="description"><%=product.fuel%></td>
+                        </tr>
+                        <tr>
+                            <td class="heading">Year</td>
+                            <td class="description"><%=product.year%></td>
+                        </tr>
+                        <tr>
+                            <td class="heading">Month</td>
+                            <td class="description"><%=product.month%></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <%- include('include/_footer')%>

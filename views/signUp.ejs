@@ -1,0 +1,35 @@
+<%- include('./include/_header') %>
+    <!-- <%- include('./include/_nav') %> -->
+
+    <div class="regContainer">
+        <div class="registerOption">
+            <div class="form-contents" id="bidderForm">
+                <div class="form">
+                    <form id="register_form_submit" method="post">
+
+                        <h3>Sign Up<br></h3>
+                        <label for="username">Enter Email
+                            <input type="email" name="userName" placeholder="ex@gmail.com">
+                        </label>
+                        <label for="name">Enter Name
+                            <input type="text" name="firstName" style="width:200px" placeholder="First name">
+                            <input type="text" name="lastName" style="width:200px" placeholder="Last name">
+                        </label>
+                        <label for="password">Enter Password
+                            <input type="password" name="password">
+                        </label>
+                        <label for="confirmPassword">Confirm Password
+                            <input type="password" name="confirmpassword">
+                        </label>
+
+                        <button type="submit" class="register-submit">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+            <div class="new-user">
+                <a href="/login">already sign up ? just login..</a>
+            </div>
+        </div>
+    </div>
+
+    <%- include('./include/_footer') %>

@@ -1,0 +1,552 @@
+/* Source Code Pro */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+/* Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* News Cycle */
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
+/* Montserrat Alternates */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    transition: 300ms;
+}
+
+#header {
+    /* padding: 1% 20px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* .outer-logo{
+    border: 2px solid red;
+
+} */
+
+.logo {
+    padding: 1% 20px;
+    /* font-weight: bold; */
+    /* background-color: rgb(221, 62, 62,0.6); */
+    /* border-right: 10px solid red; */
+    border-radius: 0 20px 1000px 0px;
+    width: 1000px;
+}
+
+.logo h1 {
+    font-size: 48px;
+    font-family: 'Montserrat Alternates';
+}
+
+.logo span {
+    color: red;
+}
+
+.logo p {
+    font-size: 20px;
+    /* font-weight: bold; */
+    font-family: 'Poppins';
+}
+
+.reglog {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* border: 2px solid yellow; */
+    width: 400px;
+}
+
+.reglog button {
+    height: 60px;
+    width: 160px;
+    border-radius: 25px;
+    font-size: 18px;
+    /* font-weight: bold; */
+    font-family: Tahoma;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgb(221, 62, 62, 0.7);
+    border: 5px solid rgb(221, 62, 62, 0.7);
+    transition: 500ms;
+    overflow: hidden;
+}
+
+.reglog button a {
+    text-decoration: none;
+    color: black;
+}
+
+.reglog button:hover {
+    background-color: whitesmoke;
+    border-width: 3px;
+    /* color: red; */
+    font-size: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(221, 62, 62);
+    padding: 3px;
+}
+
+nav ul {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    display: block;
+    /* border: 2px solid green; */
+    /* text-align: center; */
+    padding: 10px 20px;
+    overflow: hidden;
+}
+
+.tab-links {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    list-style: none;
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    transition: 300ms;
+
+}
+
+.tab-links::after {
+    content: '';
+    background: black;
+    height: 3px;
+    width: 0px;
+    position: absolute;
+    transition: 300ms;
+}
+
+
+.tab-links:hover::after,
+.tab-links:hover {
+    color: black;
+    width: 100%;
+}
+
+.active-link {
+    color: black;
+}
+
+.tab-links.active-link::after {
+    width: 50%;
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+.container {
+    height: 80vh;
+    background: url('../static/imgs/loginBg.png') center/cover no-repeat;
+    border-radius: 2px solid green;
+    align-items: center;
+    text-align: center;
+}
+
+.container h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.container h1 {
+    font-size: 62px;
+    /* color: whitesmoke; */
+}
+
+.container h1 span {
+    color: rgb(221, 62, 62);
+}
+
+/* ----------------- About ------------------- */
+
+.outer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3% 2%;
+}
+
+.aboutInfo {
+    padding: 30px 5%;
+    background-color: whitesmoke;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.5);
+    width: 90%;
+}
+
+.aboutInfo h1 {
+    color: black;
+    font-family: 'Montserrat Alternates';
+}
+
+.aboutInfo p {
+    margin: 20px auto;
+    font-size: 22px;
+    font-family: 'News Cycle';
+}
+
+/* ----------------- Contact US ------------ */
+
+.contactInfo {
+    padding: 30px 5%;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 5px 7px 0 rgba(0, 0, 0, 0.5);
+}
+
+.contactInfo form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactInfo h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 10px auto;
+}
+
+.contactInfo form input {
+    font-size: 16px;
+    padding: 5px;
+    width: 300px;
+    border-radius: 5px;
+    margin: 10px auto;
+    outline: none;
+    border: 2px solid rgb(0, 0, 0, 0.3);
+}
+
+.contactInfo form textarea {
+    margin: 10px auto;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid rgb(0, 0, 0, 0.3);
+
+}
+
+.contactInfo form button {
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 100px;
+    height: 50px;
+    color: white;
+    background-color: rgb(161, 41, 41);
+    border: 2px solid rgb(161, 41, 41);
+    border-radius: 5px;
+    /* margin-left: 50%; */
+}
+
+.contactInfo form button:hover {
+    background-color: white;
+    color: black;
+}
+
+/* --------------- How It Works ------------ */
+.howitworksInfo {
+    /* background-color: rgb(221, 62, 62); */
+    background-color: whitesmoke;
+    width: 90%;
+    position: relative;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.howitworksInfo .title h1 {
+    font-size: 32px;
+    margin: 5% auto;
+}
+
+.forBidders {
+    width: 25%;
+}
+
+.forSellers {
+    width: 25%;
+}
+
+.furtherStep {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(132, 132, 132, 0.5);
+    margin: 18px auto;
+    /* border: 2px solid red; */
+    padding: 25px 30px;
+    border-radius: 20px;
+}
+
+.number {
+    /* border: 2px solid red; */
+    background-color: rgb(161, 41, 41, 0.8);
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 15px 15px;
+}
+
+.sub-title {
+    /* border: 2px solid red; */
+    background-color: rgb(161, 41, 41, 0.8);
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 15px 25px;
+}
+
+
+/* --------------- Register -------------- */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.regContainer {
+    height: 100vh;
+    background: url('../static/imgs/offline-auction3.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerOption {
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: whitesmoke;
+    box-shadow: 0px 3px 4px 0px rgb(0, 0, 0, 0.5);
+    width: 65%;
+    height: 70vh;
+}
+
+.registerOption .tab {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .registerOption form p {
+    font-size: 20px;
+    background-color: rgb(161, 41, 41);
+    border: hidden;
+    color: white;
+    border-radius: 5px;
+    padding: 25px 25px;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 0 5px 6px 0 rgb(221, 62, 62, 0.7);
+    overflow: hidden;
+}
+
+
+.registerOption form p:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+} */
+
+.form {
+    width: 500px;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form form h3{
+    margin: 15px 0;
+    margin-bottom: 20px;
+    position: relative;
+    /* color: black; */
+}
+
+.form form h3::after{
+    content: '';
+    background-color: rgb(0, 0, 0, 0.3);
+    height: 2px;
+    width: 100%;
+    left: 0;
+    position: absolute;
+}
+
+.form form div{
+    display: flex;
+    flex-direction: column;
+}
+
+.form form label {
+    font-size: 16px;
+}
+
+.form form input {
+    font-size: 14px;
+    padding: 3px;
+    border-radius: 3px;
+    width: 300px;
+    border-color: rgb(0, 0, 0, 0.3);
+    margin: 5px 3px;
+}
+
+/* .active-regi-link {
+    box-shadow: 0 5px 6px 0 rgb(221, 62, 62, 0.7);
+}
+
+.form-contents {
+    display: none;
+}
+
+.form-contents.active-form {
+    display: block;
+} */
+
+.form form button {
+    font-size: 20px;
+    background-color: rgb(161, 41, 41);
+    border: 5px solid rgb(161, 41, 41);
+    color: white;
+    border-radius: 5px;
+    padding: 25px 25px;
+    margin-top: 10px;
+    cursor: pointer;
+    /* box-shadow: 0 5px 6px 0 rgb(221, 62, 62, 0.7); */
+    overflow: hidden;
+}
+
+.form form button:hover {
+    background-color: aliceblue;
+    color: black;
+    border: 5px solid rgb(161, 41, 41);
+}
+
+/* ---------- Login -------------- */
+
+.login-links{
+    box-shadow: 0 6px 7px 8px rgb(221, 62, 62, 0.7);
+    background-color: rgb(221, 62, 62);
+}
+
+
+
+/* .login-contents {
+    display: none;
+}
+
+.login-contents.active-login-form{
+    display: block;
+} */
+
+.site-main {
+    background:url('../static/imgs/offline-auction3.jpg') center/cover no-repeat;
+    height: 100vh;
+    /* position: inherit; */
+}
+
+.content{
+    display: flex;
+}
+
+.user-option{
+    display: flex;
+    flex-direction: column;
+    /* margin: 50% auto; */
+}
+
+
+.user-option li {
+    list-style: none;
+    position: relative;
+    margin: 15px 10%;
+    padding: 15px 0;
+    text-align: center;
+    width: 30vw;
+    background-color: rgb(221, 62, 62);
+    border: 2px solid rgb(221, 62, 62, 0.7);
+    border-radius: 10px;
+}
+
+.user-option li:hover{
+    background-color: whitesmoke;
+    border-color: white;
+}
+
+.user-option a, .sidebar ul li{ 
+    /* text-decoration: none; */
+    color: black;
+    cursor: pointer;
+    font-size: 26px;
+}
+
+.sidebar{
+    display: flex;
+    background-color: rgb(221, 62, 62);
+    width: 20vw;
+    border-radius: 0 0 20px 20px;
+}
+
+.sidebar ul {
+    margin: auto;
+}
+
+.sidebar ul p{
+    display: flex;
+    justify-content: center;
+    position :relative;
+    text-align: center;
+}
+
+.loged-user-name {
+    margin: 30px auto; 
+}
+
+.sidebar ul li {
+    text-align: center;
+    list-style: none;
+    margin: 28px auto;
+    position:relative;
+}
+
+.sidebar ul li::after {
+    content : '';
+    background-color: white;
+    border-radius: 10px;
+    width: 0;
+    left: 0;
+    height: 5px;
+    position: absolute;
+    transition: 300ms;
+}
+
+.sidebar ul li:hover::after{
+    width: 100%;
+    color: white;
+}
+
+#productRegister {
+    padding: 2%;
+    margin: 3% 3%;
+}
+
+#productRegister .form-group{
+    margin: 10px 0;
+}

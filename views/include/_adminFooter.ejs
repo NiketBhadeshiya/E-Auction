@@ -1,0 +1,40 @@
+<script>
+    var tablinks = document.getElementsByClassName('tab-links');
+    var tabcontents = document.getElementsByClassName('tab-contents');
+
+    function opentab(tabname) {
+        for (tablink of tablinks) {
+            tablink.classList.remove("active-link");
+        }
+
+        for (tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+        }
+
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+    var sublinks = document.getElementsByClassName('subtab-links');
+    var subtabcontents = document.getElementsByClassName('subtab-contents');
+
+    function opensubtab(tabname){
+        for(sublink of sublinks){
+            sublink.classList.remove("active-subtab-link");
+        }
+        for(subtabcontent of subtabcontents){
+            subtabcontent.classList.remove('active-subtab');
+        }
+
+        event.currentTarget.classList.add("active-subtab-link");
+        document.getElementById(tabname).classList.add("active-subtab");
+    }
+
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/js/index.js"></script>
+<script src="/js/adminIndex.js"></script>
+</body>
+
+</html>

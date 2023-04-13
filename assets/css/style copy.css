@@ -1,0 +1,712 @@
+/* Source Code Pro */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+/* Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* News Cycle */
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
+/* Montserrat Alternates */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    transition: 300ms;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#header {
+    /* padding: 1% 20px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* .outer-logo{
+    border: 2px solid red;
+
+} */
+
+.logo {
+    padding: 1% 20px;
+    /* font-weight: bold; */
+    /* background-color: rgb(221, 62, 62,0.6); */
+    /* border-right: 10px solid red; */
+    border-radius: 0 20px 1000px 0px;
+    width: 1000px;
+}
+
+.logo h1 {
+    font-size: 42px;
+    font-family: 'Montserrat Alternates';
+}
+
+.logo span {
+    color: red;
+}
+
+.logo p {
+    font-size: 20px;
+    /* font-weight: bold; */
+    font-family: 'Poppins';
+}
+
+.reglog {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* border: 2px solid yellow; */
+    width: 400px;
+}
+
+.reglog button {
+    height: 60px;
+    width: 160px;
+    border-radius: 25px;
+    font-size: 18px;
+    /* font-weight: bold; */
+    font-family: Tahoma;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgb(221, 62, 62, 0.7);
+    border: 5px solid rgb(221, 62, 62, 0.7);
+    transition: 500ms;
+    overflow: hidden;
+}
+
+.reglog button a {
+    text-decoration: none;
+    color: black;
+}
+
+.reglog button:hover {
+    background-color: whitesmoke;
+    border-width: 3px;
+    /* color: red; */
+    font-size: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    /* background-color: rgb(221, 62, 62); */
+    background-color: rgb(161, 41, 41);
+    padding: 3px;
+}
+
+nav ul {
+    width: 80%;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    display: block;
+    /* border: 2px solid green; */
+    /* text-align: center; */
+    padding: 10px 20px;
+    overflow: hidden;
+}
+
+.tab-links {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    list-style: none;
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    transition: 300ms;
+
+}
+
+.tab-links::after {
+    content: '';
+    background: black;
+    background: rgba(255,255,255,0.5);
+    height: 3px;
+    width: 0px;
+    left: 0;
+    position: absolute;
+    transition: 300ms;
+}
+
+
+.tab-links:hover::after,
+.tab-links:hover{
+    /* color: black; */
+    color: rgba(255,255,255,0.5);
+    width: 100%;
+}
+
+.active-link {
+    /* color: black; */
+    color: rgba(255,255,255,0.5);
+}
+
+.tab-links.active-link::after {
+    width: 50%;
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+.container {
+    height: 80vh;
+    background: url('/static/imgs/loginbg.png') center/cover no-repeat;
+    border-radius: 2px solid green;
+    align-items: center;
+    text-align: center;
+}
+
+.container h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.container h1 {
+    font-size: 62px;
+    /* color: whitesmoke; */
+}
+
+.container h1 span {
+    color: rgb(221, 62, 62);
+}
+
+/* ----------------- About ------------------- */
+
+.outer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3% 2%;
+}
+
+.aboutInfo {
+    padding: 30px 5%;
+    background-color: whitesmoke;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.5);
+    width: 90%;
+}
+
+.aboutInfo h1 {
+    color: black;
+    font-family: 'Montserrat Alternates';
+}
+
+.aboutInfo p {
+    margin: 20px auto;
+    font-size: 22px;
+    font-family: 'News Cycle';
+}
+
+/* ----------------- Contact US ------------ */
+
+.contactInfo {
+    padding: 30px 5%;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 5px 7px 0 rgba(0, 0, 0, 0.5);
+}
+
+.contactInfo form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactInfo h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 10px auto;
+}
+
+.contactInfo form input {
+    font-size: 16px;
+    padding: 5px;
+    width: 300px;
+    border-radius: 5px;
+    margin: 10px auto;
+    outline: none;
+    border: 2px solid rgb(0, 0, 0, 0.3);
+}
+
+.contactInfo form textarea {
+    margin: 10px auto;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid rgb(0, 0, 0, 0.3);
+
+}
+
+.contactInfo form button {
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 100px;
+    height: 50px;
+    color: white;
+    background-color: rgb(161, 41, 41);
+    border: 2px solid rgb(161, 41, 41);
+    border-radius: 5px;
+    /* margin-left: 50%; */
+}
+
+.contactInfo form button:hover {
+    background-color: white;
+    color: black;
+}
+
+/* --------------- How It Works ------------ */
+.howitworksInfo {
+    /* background-color: rgb(221, 62, 62); */
+    background-color: whitesmoke;
+    width: 90%;
+    border-radius: 20px;
+    padding: 1%;
+    position: relative;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.howitworksInfo .title h1 {
+    font-size: 28px;
+    margin: 5% auto;
+}
+
+.forBidders {
+    width: 25%;
+}
+
+.forSellers {
+    width: 25%;
+}
+
+.furtherStep {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(132, 132, 132, 0.5);
+    margin: 15px auto;
+    /* border: 2px solid red; */
+    padding: 20px 30px;
+    border-radius: 20px;
+}
+
+.number {
+    /* border: 2px solid red; */
+    background-color: rgb(161, 41, 41, 0.8);
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 15px 15px;
+}
+
+.sub-title {
+    /* border: 2px solid red; */
+    background-color: rgb(161, 41, 41, 0.8);
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 15px 25px;
+}
+
+
+/* --------------- Register -------------- */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.regContainer {
+    height: 100vh;
+    background: url('../static/imgs/offline-auction3.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerOption {
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: whitesmoke;
+    box-shadow: 0px 3px 4px 0px rgb(0, 0, 0, 0.5);
+    width: 65%;
+    height: 70vh;
+}
+.loginOption {
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: whitesmoke;
+    box-shadow: 0px 3px 4px 0px rgb(0, 0, 0, 0.5);
+    width: 65%;
+    height: 55vh;
+}
+
+.registerOption .tab {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .registerOption form p {
+    font-size: 20px;
+    background-color: rgb(161, 41, 41);
+    border: hidden;
+    color: white;
+    border-radius: 5px;
+    padding: 25px 25px;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 0 5px 6px 0 rgb(221, 62, 62, 0.7);
+    overflow: hidden;
+}
+
+
+.registerOption form p:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+} */
+
+.form {
+    width: 500px;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form form h3{
+    margin: 15px 0;
+    margin-bottom: 20px;
+    position: relative;
+    /* color: black; */
+}
+
+.form form h3::after{
+    content: '';
+    background-color: rgb(0, 0, 0, 0.3);
+    height: 2px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+}
+
+.form form div{
+    display: flex;
+    flex-direction: column;
+}
+
+.form form label {
+    font-size: 16px;
+}
+
+.form form input {
+    font-size: 14px;
+    padding: 3px;
+    border-radius: 3px;
+    width: 300px;
+    border-color: rgb(0, 0, 0, 0.3);
+    margin: 5px 3px;
+}
+
+/* .active-regi-link {
+    box-shadow: 0 5px 6px 0 rgb(221, 62, 62, 0.7);
+}
+
+.form-contents {
+    display: none;
+}
+
+.form-contents.active-form {
+    display: block;
+} */
+
+.form form button {
+    font-size: 20px;
+    background-color: rgb(161, 41, 41);
+    border: 5px solid rgb(161, 41, 41);
+    color: white;
+    border-radius: 5px;
+    padding: 25px 25px;
+    margin-top: 10px;
+    cursor: pointer;
+    /* box-shadow: 0 5px 6px 0 rgb(221, 62, 62, 0.7); */
+    overflow: hidden;
+}
+
+.form form button:hover {
+    background-color: aliceblue;
+    color: black;
+    border: 5px solid rgb(161, 41, 41);
+}
+
+/* ---------- Login -------------- */
+
+.login-links{
+    box-shadow: 0 6px 7px 8px rgb(221, 62, 62, 0.7);
+    background-color: rgb(221, 62, 62);
+}
+
+
+
+/* ----------- login home */
+.user-option ul li a{ 
+    text-decoration: none;
+    color: black;
+    margin: 25px 0;
+    padding: 10px 25px;
+    /* border: 2px solid green; */
+}
+
+#productRegister fieldset {
+    margin: 20px auto;
+    padding: 1%;
+}
+
+
+
+.product-view {
+    width: 100%;
+    padding: 1% 3%;
+}
+
+/* .comp{
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border : 2px solid ;
+    display: flex;
+}
+
+.child_comp{
+    max-width: 30%;
+    border : 2px solid green;
+
+} */
+
+.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 30px;
+    width: 100%;
+    /* border: 2px solid green;
+    /* border-radius: 20px;*/
+    /* margin-top: 50px;  */
+}
+
+.grid-view a {
+    /* max-width: 30%; */
+    color: black;
+    text-decoration: none;
+    /* width: fit-content; */
+}
+
+.grid-view .product {
+    /* border: 5px solid red; */
+    background-color: whitesmoke;
+    box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    border-radius: 20px;
+    /* background-color: rgb(221, 62, 62) */
+}
+
+.grid-view .product:hover{
+    box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.7);
+}
+
+.grid-view .product-image {
+    width: 100%;
+    /* height: 400px; */
+    /* position: absolute; */
+}
+
+.product-image img {
+    width: 100%;
+    border-radius: 20px;
+    /* position: absolute; */
+}
+
+.product-description {
+    text-align: center;
+    margin: 10px;
+}
+
+div.product-description p.product-name {
+    font-size: 28px;
+    margin: 7px auto;
+}
+
+div.update-profile {
+    position: relative;
+    right: 0;
+    margin: 25px 0;
+    width: 500px;
+    /* border : 10px solid green; */
+}
+
+div.product-description p.p-desc
+{
+    color: rgb(0, 0, 0, 0.7);
+}
+
+/* ---------- Home ---------- */
+
+#myProfile .table{
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.update-profile button{
+    margin: auto;
+}
+
+div.table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.table h1 {
+    text-align: center;
+    margin: 30px 0;
+}
+
+div.table a.btn {
+    background-color: rgb(161, 41, 41);
+    padding: 10px 20px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 6px 8px 0px rgba(255, 29, 29, 0.7);
+    font-size: 18px;
+    float: right;
+}
+
+div.table a.btn:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0 6px 8px 0px rgba(0, 0, 0, 0.7);
+}
+
+
+/* ----------------- admin- ------- */
+.sub-container {
+    margin: 5vh auto;
+    width: 90%;
+    border: 5px solid rgb(161, 41, 41);
+}
+
+.subnav {
+    width: 100%;
+    background-color: rgb(161, 41, 41);
+}
+
+.subnav ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.subnav ul li {
+    list-style: none;
+    padding: 7px 5px;
+}
+
+.subtab-links{
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+    font-size: 24px;
+    font-family: 'Poppins';
+    position: relative;
+}
+
+.subtab-links::after {
+    content:'';
+    width: 0;
+    background-color: white;
+    height: 3px;
+    left: 0;
+    position: absolute;
+    transition: 300ms;
+}
+
+.subtab-links:hover::after,
+.subtab-links:hover {
+    color: white;
+    width: 100%;
+}
+
+.subtab-links.active-subtab-link::after, .active-subtab-link {
+    width: 50%;
+    color: white;
+}
+
+.subtab-contents {
+    display: none;
+}
+
+.active-subtab {
+    display: flex;
+    justify-content: center;
+}
+
+#users table{
+    padding: 2%;
+}
+
+/* ----------------- Product View ----------- */
+
+div.product-view div.product-imgs{
+    /* position: relative; */
+    width: 50%;
+    border: 5px solid yellow;
+    margin: 20px auto;
+}
+
+div.product-view div.product-imgs img{
+    width: 100%;
+}
+
+div.product-view div.product-details h1,
+div.product-view div.product-details h2
+{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 20px 0;
+}
+
+div.product-view div.product-details table{
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+div.product-view div.product-details table td.description{
+    color: rgb(0, 0, 0, 0.7);
+}

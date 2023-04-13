@@ -1,0 +1,34 @@
+<nav>
+    <ul>
+        <% if(admin) { %>
+            <li><a class="tab-links">Hello <%=user[0].name.firstName%>
+                        <%=user[0].name.lastName%><br></a></li>
+            <li><a class="tab-links active-link" onclick="opentab('home')">Home <br></a></li>
+            <li><a class="tab-links" onclick="opentab('myProfile')">My Profile<br></a></li>
+            <li><a class="tab-links" href="/admin"> Logout <br></a></li>
+            <%} else if(login){ %>
+                <!-- <li> <a class="tab-links">Welcome<br></a></li> -->
+                <li><a class="tab-links">Hello <%=user[0].name.firstName%>
+                            <%=user[0].name.lastName%><br></a></li>
+                <li><a class="tab-links active-link" onclick="opentab('home')">Home <br></a></li>
+                <li><a class="tab-links" onclick="opentab('myProfile')">My Profile<br></a></li>
+                <li><a class="tab-links" onclick="opentab('myPurchase')">My Purchase<br></a></li>
+                <!-- <li><a class="tab-links" onclick="opentab('seller')">Seller<br></a></li> -->
+                <!-- <li><a class="tab-links" onclick="opentab('product')">All product<br></a></li> -->
+                <li><a class="tab-links" href="/place-product/<%=user[0]._id%>">Place
+                        Product<br></a></li>
+                <li><a class="tab-links" onclick="opentab('myProduct')">My Product<br></a></li>
+                <li><a class="tab-links" onclick="opentab('contact')">Contact<br></a></li>
+                <!-- <li><a class="tab-links" onclick="opentab('#')">Logout <br></a></li> -->
+                <li><a class="tab-links" href="/"> Logout <br></a></li>
+
+                <% } else {%>
+                    <li><a class="tab-links active-link" onclick="opentab('homeTab')">Home <br></a></li>
+                    <li><a class="tab-links" onclick="opentab('about')">About Us <br></a></li>
+                    <li><a class="tab-links" onclick="opentab('howitworks')">How it works <br></a></li>
+                    <li><a class="tab-links" onclick="opentab('contact')">Contact Us <br></a></li>
+                    <li><a class="tab-links" onclick="opentab('signup')">Sign up <br></a></li>
+                    <li><a class="tab-links" onclick="opentab('login')">Login <br></a></li>
+                    <% } %>
+    </ul>
+</nav>

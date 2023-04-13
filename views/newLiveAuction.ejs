@@ -1,0 +1,108 @@
+<%- include('include/_header')%>
+    <nav>
+        <ul>
+            <li><a class="tab-links" onclick="window.history.back();window.reload();">Home <br></a></li>
+        </ul>
+    </nav>
+    <section id="live-auction">
+        <div class="bidView">
+            <div class="product-info">
+                <div class="bid-product-image">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-theme="dark">
+                        <div class="carousel-inner" data-bs-theme="dark">
+                          <div class="carousel-item active">
+                            <img src="<%=imgs[0].path%>" class="d-block w-100" alt="<%=imgs[0].productImage%>">
+                          </div>
+                          <% for(let i = 1; i < imgs.length; i++){ %>
+                            <div class="carousel-item">
+                              <img src="<%=imgs[i].path%>" class="d-block w-100" alt="<%=imgs[i].productImage%>" title="<%=imgs[i].productImage%>">
+                            </div>
+                          <% } %>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-info">
+                <div class="bid-product-details">
+                    <h1>
+                        <%=product.productName%>
+                    </h1>
+                    <h3>
+                        <%=product.startPrice%>
+                    </h3>
+                    <table cellspacing="15">
+                        <tr>
+                            <td>Description</td>
+                            <td>
+                                <%=product.productDescription%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Starting Bid</td>
+                            <td>
+                                <%=product.startPrice%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Seller</td>
+                            <td>
+                                <%=product.userId.name.firstName%>
+                                    <%=product.userId.name.lastName%>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <input type="hidden" name="sellerId" value="<%=product.userId._id%>" id="sellerid">
+                <input type="hidden" name="productId" value="<%=product._id%>" id="productid">
+                <input type="hidden" name="userId" value="<%=user._id%>" id="userid">
+                <div id="startBid">
+                    <% if(product.userId._id == user._id) { %>
+                    <div class="select-time">
+                        <input type="number" name="bidTime" id="bidTime" placeholder="please enter Minutes of Bid">
+                    </div>
+                    <button onclick="startTimer()">Start Auction</button>
+                    <% } %>
+                </div>
+    
+                <div id="live-bid">
+                    <div>
+                        Current Bid : 
+                        <span id="currentBid">
+                            <% if(bid.length != 0){ %>
+                                <%=bid[0].bidAmount%>
+                            <% } else { %>
+                                <%=product.startPrice%>
+                            <% } %>
+                        </span>
+                    </div>
+                    <div id="demo"></div>
+                    <div class="remainingTime">
+                        Remaining time : <span id="countDown"></span>
+                    </div>
+                    <div>
+                        <input type="number" name="bidAmount" id="submitBid">
+                        <button type="submit" id="bidSubmitBtn">Submit Bid</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        var userid = document.getElementsByClassName('sellerid');
+        var sellerid = document.getElementsByClassName('userid');
+        if (userid.value == sellerid.value) {
+            document.getElementById("startBid").style.display = "block";
+        }
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/client.js"></script>
+    <%- include('include/_footer')%>

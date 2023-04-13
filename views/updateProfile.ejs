@@ -1,0 +1,94 @@
+<%- include('include/_header')%>
+
+    <% if(admin) { %>
+        <nav>
+            <ul>
+                <li class="tab-links" onclick="window.history.back()">Home <br></li>
+            </ul>
+        </nav>
+        <div class="update-container">
+            <div class="user-data">
+                <form method="post" id="update-admin-profile">
+                    <div class="form-group">
+                        <label for="userName"> User name
+                            <input type="text" name="userName" value="<%=user[0].userName%>">
+                            <input type="hidden" name="id" value="<%=user[0]._id%>">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="password"> Password
+                            <input type="password" name="password" value="<%=user[0].password%>">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name
+                            <input type="text" name="firstName" value="<%=user[0].name.firstName%>">
+                            <input type="text" name="lastName" value="<%=user[0].name.lastName%>">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactNo"> Contact no.
+                            <input type="text" name="contactNo" value="<%=user[0].contactNo%>">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <%- include('include/_adminFooter')%>
+            <% } else { %>
+                <nav>
+                    <ul>
+                        <li class="tab-links" onclick="window.history.back()">Home <br></li>
+                    </ul>
+                </nav>
+                <div class="update-container">
+                    <div class="user-data">
+                        <form method="post" id="update-profile">
+                            <div class="form-group">
+                                <label for="name">Name
+                                    <input type="hidden" name="id" value="<%=user._id%>">
+                                    <input type="text" name="firstName" value="<%=user.name.firstName%>">
+                                    <input type="text" name="lastName" value="<%=user.name.lastName%>">
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="userName"> User name
+                                    <input type="text" name="userName" value="<%=user.userName%>">
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactNo"> Contact no.
+                                    <input type="text" name="contactNo" value="<%=user.contactNo%>">
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="address"> Address
+                                    <% if(user.address != null){ %>
+                                        <input type="text" name="buildingNo" value="<%=user.address.buildingNo%>">
+                                        <input type="text" name="buildingName" value="<%=user.address.buildingName%>">
+                                        <input type="text" name="landmark" value="<%=user.address.landmark%>">
+                                        <input type="text" name="city" value="<%=user.address.city%>">
+                                        <input type="text" name="state" value="<%=user.address.state%>">
+                                        <input type="text" name="pincode" value="<%=user.address.pincode%>">
+                                    <% } else { %>
+                                        <input type="text" name="buildingNo" placeholder="BuildingNo" value="">
+                                        <input type="text" name="buildingName" placeholder="BuildingName" value="">
+                                        <input type="text" name="landmark" placeholder="Landmark" value="">
+                                        <input type="text" name="city" placeholder="City" value="">
+                                        <input type="text" name="state" placeholder="State" value="">
+                                        <input type="text" name="pincode" placeholder="Pincode" value="">
+                                    <% } %>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit">Save Changes</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                <%- include('include/_footer')%>
+                    <% } %>
